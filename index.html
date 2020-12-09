@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Carsale AJAX example</title>
+	<script>
+		function getCars() {
+
+			var ajaxRequest = new XMLHttpRequest();
+			ajaxRequest.onreadystatechange = function () {
+
+				if (ajaxRequest.readyState == 4) {
+
+					if (ajaxRequest.status == 200) {
+
+						var jsonObj = JSON.parse(ajaxRequest.responseText);
+
+						var carsale = jsonObj.carsale;
+						
+						document.getElementById("header").innerHTML = carsale.header;
+						document.getElementById("subHeader").innerHTML = carsale.subHeader;
+						document.getElementById("firstlist").innerHTML = carsale.firstlist;
+						document.getElementById("secondlist").innerHTML = carsale.secondlist;
+											
+						//document.getElementById("welcome").style.color = messageObj.color;
+
+						var i, j, k, x = "";
+
+						for (i in carsale.cars) {
+							x += "<h2>" + carsale.cars[i].name + "</h2>";
+							for (j in carsale.cars[i].models) {
+								x += "<li> Model: " + carsale.cars[i].models[j] + "<br>";
+									for (k in carsale.cars[i].models[j].submodels) {
+										x += "- Submodel: " + carsale.cars[i].models[j].submodels[k] + "<br>";
+								}
+							}
+						}
+
+						document.getElementById("ul").innerHTML = x;
+
+					}
+					else {
+						console.log("Status error: " + ajaxRequest.status);
+					}
+				}
+				else {
+					console.log("Ignored readyState: " + ajaxRequest.readyState);
+				}
+
+
+			}
+			ajaxRequest.open('GET', './data/data.json');
+			ajaxRequest.send();
+		}
+
+	</script>
+
+
+</head>
+
+<body onload="getCars()">
+	<div id="header"></div>
+	<div id="subHeader"></div>
+	<div id="firstlist"></div>
+	<div id="secondlist"></div>
+	<div id="ul"></div>
+	<p>tekstikappale</p>
+</body>
+
+</html>
