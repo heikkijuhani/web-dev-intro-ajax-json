@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>Carsale AJAX example</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="paikannus, paikkatieto" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<LINK rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="icon" type="image/png" href="./heikki.jpg">
+
+	<title>Heikki Juhani Kumpare (os. Pietilä)</title>
+	
 	<script>
-		function getCars() {
+		function getCv() {
 
 			var ajaxRequest = new XMLHttpRequest();
 			ajaxRequest.onreadystatechange = function () {
@@ -18,8 +25,13 @@
 						var curriculumVitae = jsonObj.curriculumVitae;
 
 						document.getElementById("header").innerHTML = curriculumVitae.header;
-						document.getElementById("test").innerHTML = curriculumVitae.test;
-						document.getElementById("personalInfo").innerHTML = curriculumVitae.personalInfo;
+
+						var i, personalInfo = "";
+
+						for (i in curriculumVitae.personalInfo) {
+							personalInfo += "<li>" + curriculumVitae.personalInfo[i];
+						}					
+						document.getElementById("personalInfo").innerHTML = personalInfo;
 						//document.getElementById("header").style.color = "red";
 
 						var i, j, k, content = "";
@@ -60,11 +72,85 @@
 
 </head>
 
-<body onload="getCars()">
-	<div id="header"></div>
-	<div id="test"></div>
-	<div id="personalInfo"></div>
-	<div id="content"></div>
+<body onload="getCv()">
+
+    <header>
+
+        <h1><div id="header"></div></h1>
+        
+	</header>
+
+	<section>
+
+        <nav>
+            <img src="heikki.jpg" alt="Heikki" style="width: 70%; margin: 10%;">
+            <div id="personalInfo"></div>
+		</nav>
+
+
+		<article>
+			<a name="koulutus"></a>
+			<fieldset>
+
+				<legend>Koulutus / Education</legend>
+                <div id="header"></div>
+                <div id="personalInfo"></div>
+                <div id="content"></div>
+		
+
+			</fieldset>
+
+			<br>
+			<a name="tyokokemus"></a>
+			<fieldset>
+
+				<legend>Työkokemus</legend>
+
+				<h4>2019- Sovellusasiantuntija Mylab Oy</h4>
+
+
+				<p style="margin-left: 50px;">Sovellusasiantuntijan tehtävät laboratoriotietojärjestelmän
+					kehityksessä</p>
+				<ul style="margin-left: 30px;">
+					<li>Jira ja Confluence</li>
+					<li>C#, HTML, CSS</li>
+					<li>.NET Framework</li>
+					<li>Scrum ja SAFe</li>
+				</ul>
+
+
+			</fieldset>
+			<br>
+
+			<a name="muu"></a>
+			<fieldset>
+
+				<legend>Harrastukset ja luottamustoimet</legend>
+
+
+				<p style="margin-left: 50px;"></p>
+				<ul style="margin-left: 30px;">
+					<li>As Oy Helsingin Uusi Pajamäki - hallituksen jäsen</li>
+					<li>Vääpelikilta ry - useita eri luottamustehtäviä johtokunnassa</li>
+					<li><a href="https://www.instagram.com/labradori.calla/" target="_blank">Labradori Callan</a> kanssa
+						harrastaminen</li>
+					<li>Lentosimulaattorit</li>
+					<li>Golf - autona ja pelinä <b>🤓</b></li>
+
+				</ul>
+
+
+			</fieldset><br>
+		</article>
+
+	</section>
+
+
+	<footer>
+		<p>Heikki Kumpare<br>
+			<a href="mailto:heikki.kumpare@centria.fi">heikki.kumpare@centria.fi</a></p>
+	</footer>
+
 </body>
 
 </html>

@@ -1,11 +1,7 @@
 {
 	"curriculumVitae": {
+		"favicon": ".images/heikki1.jpg",
 		"header": "Heikki Juhani Kumpare (os. Pietilä)",
-		"test": [
-			1,
-			2,
-			3
-		],
 		"personalInfo": [
 			"38v.",
 			"Sovellusasiantuntija/sovelluskehittäjä",
@@ -27,10 +23,18 @@
 					{"subTopicHeader":"2018-2019 Datanomi Business College Helsinki",
 						"subTopicText": "Ohjelmistotuotannon koulutusohjelma",
 						"subTopicInfo": [
-							"Stipendi da daa",
 							"Java, HTML, CSS sekä Android-ohjelmointi",
 							"Organisaation kyberturvallisuuden valinnaiset opinnot"
 						]
+					},
+					{"subTopicHeader":"2010 Lähihoitaja Helsingin Sosiaali- ja terveysalan oppilaitos",
+						"subTopicText": "Ensihoidon koulutusohjelma.",
+						"subTopicInfo": [
+							"Ensihoidon ja perioperatiivisen hoitotyön valinnaiset jaksot"
+						]
+					},
+					{"subTopicHeader":"2002 Ylioppilas Töölön yhteiskoulun lukio",
+						"subTopicText": "Ylioppilas ja lukion oppimäärä"
 					}
 				]
 			},
@@ -38,20 +42,48 @@
 			{
 				"topic": "Työkokemus",
 				"subTopics": [ 
-					{"subTopicHeader":"Työkokemus 1 2000-2000",
+					{"subTopicHeader":"2019- Sovellusasiantuntija Mylab Oy",
+						"subTopicText": "Sovellusasiantuntijan tehtävät laboratoriotietojärjestelmän kehityksessä.",
 						"subTopicInfo": [
-							"Nimike loremipsum",
-							"Tärkemimmät tehtävät da daa da da ada daa"
+							"Jira ja Confluence",
+							"C#, HTML, CSS",
+							".NET Framework",
+							"Scrum ja SAFe"
 						]
 					},
-					{"subTopicHeader":"Työkokemus 2 2000-2000",
+					{"subTopicHeader":"2015-2018 Obduktioalantyöt",
+						"subTopicText": "Obduktioalan työt lääketieteellisissä ja oikeuslääketieteellisissä obduktioissa.",
 						"subTopicInfo": [
-							"Nimike loremipsum",
-							"Tärkemimmät tehtävät da daa da da ada daa"
+							"Röntgenkuvaus ja DVI -toiminta",
+							"Vainajalogistiikka ja lähetteet"
+						]
+					},
+					{"subTopicHeader":"2005-2015 Ensihoitoalan työt",
+						"subTopicText": "Ensihoitoalan työt hoito- ja perustason yksiköissä.",
+						"subTopicInfo": [
+							"HUS: Helsinki, Vanhaa, Hyvinkää ja Tuusula",
+							"Kanta-Häme: Hausjärvi"
+						]
+					}
+
+				]
+			},
+			{
+				"topic": "Harrastukset",
+				"subTopics": [ 
+					{"subTopicHeader":"",
+						"subTopicText": "",
+						"subTopicInfo": [
+							"As Oy Helsingin Uusi Pajamäki - hallituksen jäsen",
+							"Vääpelikilta ry - useita eri luottamustehtäviä johtokunnassa",
+							"Labradori Callan kanssa harrastaminen",
+							"Lentosimulaattorit",
+							"Golf - autona ja pelinä 🤓"
 						]
 					}
 				]
 			}
+
 		]
 	}
 }
