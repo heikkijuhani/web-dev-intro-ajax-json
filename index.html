@@ -15,28 +15,31 @@
 
 						var jsonObj = JSON.parse(ajaxRequest.responseText);
 
-						var carsale = jsonObj.carsale;
-						
-						document.getElementById("header").innerHTML = carsale.header;
-						document.getElementById("subHeader").innerHTML = carsale.subHeader;
-						document.getElementById("firstlist").innerHTML = carsale.firstlist;
-						document.getElementById("secondlist").innerHTML = carsale.secondlist;
-											
-						//document.getElementById("welcome").style.color = messageObj.color;
+						var curriculumVitae = jsonObj.curriculumVitae;
 
-						var i, j, k, x = "";
+						document.getElementById("header").innerHTML = curriculumVitae.header;
+						document.getElementById("test").innerHTML = curriculumVitae.test;
+						document.getElementById("personalInfo").innerHTML = curriculumVitae.personalInfo;
+						//document.getElementById("header").style.color = "red";
 
-						for (i in carsale.cars) {
-							x += "<h2>" + carsale.cars[i].name + "</h2>";
-							for (j in carsale.cars[i].models) {
-								x += "<li> Model: " + carsale.cars[i].models[j] + "<br>";
-									for (k in carsale.cars[i].models[j].submodels) {
-										x += "- Submodel: " + carsale.cars[i].models[j].submodels[k] + "<br>";
+						var i, j, k, content = "";
+
+						for (i in curriculumVitae.content) {
+							content += "<h3>" + curriculumVitae.content[i].topic + "</h3>";
+							for (j in curriculumVitae.content[i].subTopics) {
+								content += "<h4>" + curriculumVitae.content[i].subTopics[j].subTopicHeader + "</h4>";
+								for (k in curriculumVitae.content[i].subTopics[j].subTopicText) {
+									content += curriculumVitae.content[i].subTopics[j].subTopicText[k];
+								
 								}
+								for (k in curriculumVitae.content[i].subTopics[j].subTopicInfo) {
+									content += "<li>" + curriculumVitae.content[i].subTopics[j].subTopicInfo[k];
+								}
+								"<br>"
 							}
 						}
 
-						document.getElementById("ul").innerHTML = x;
+						document.getElementById("content").innerHTML = content;
 
 					}
 					else {
@@ -60,11 +63,9 @@
 
 <body onload="getCars()">
 	<div id="header"></div>
-	<div id="subHeader"></div>
-	<div id="firstlist"></div>
-	<div id="secondlist"></div>
-	<div id="ul"></div>
-	<p>tekstikappale</p>
+	<div id="test"></div>
+	<div id="personalInfo"></div>
+	<div id="content"></div>
 </body>
 
 </html>
