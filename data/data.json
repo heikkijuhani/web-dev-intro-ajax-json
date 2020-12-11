@@ -1,11 +1,7 @@
 {
 	"curriculumVitae": {
+		"favicon": ".images/heikki1.jpg",
 		"header": "Heikki Juhani Kumpare (os. Pietilä)",
-		"test": [
-			1,
-			2,
-			3
-		],
 		"personalInfo": [
 			"38v.",
 			"Sovellusasiantuntija/sovelluskehittäjä",
@@ -15,8 +11,9 @@
 		"content": [
 			{
 				"topic": "Koulutus / Education",
-				"subTopics": [ 
-					{"subTopicHeader":"2020-2021 H2C -koulutusohjelma Centria UAS",
+				"subTopics": [
+					{
+						"subTopicHeader": "2020-2021 H2C -koulutusohjelma Centria UAS",
 						"subTopicText": "Ohjelmistokehityksen koulutus, jossa opitaan kehittämään asianmukaisia tietoturvallisia ohjelmointiratkaisuja. Highway 2 Code -koulutus on korkeakoulutasoinen, ilmainen ja kestää kuusi kuukautta.",
 						"subTopicInfo": [
 							"C#, HTML, CSS ja JS",
@@ -24,34 +21,78 @@
 							"Projektityö 8op"
 						]
 					},
-					{"subTopicHeader":"2018-2019 Datanomi Business College Helsinki",
+					{
+						"subTopicHeader": "2018-2019 Datanomi Business College Helsinki",
 						"subTopicText": "Ohjelmistotuotannon koulutusohjelma",
 						"subTopicInfo": [
-							"Stipendi da daa",
 							"Java, HTML, CSS sekä Android-ohjelmointi",
 							"Organisaation kyberturvallisuuden valinnaiset opinnot"
+						]
+					},
+					{
+						"subTopicHeader": "2010 Lähihoitaja Helsingin Sosiaali- ja terveysalan oppilaitos",
+						"subTopicText": "Ensihoidon koulutusohjelma.",
+						"subTopicInfo": [
+							"Ensihoidon ja perioperatiivisen hoitotyön valinnaiset jaksot"
+						]
+					},
+					{
+						"subTopicHeader": "2002 Ylioppilas Töölön yhteiskoulun lukio",
+						"subTopicText": "Ylioppilas ja lukion oppimäärä"
+					}
+				]
+			},
+			{
+				"topic": "Työkokemus",
+				"subTopics": [
+					{
+						"subTopicHeader": "2019- Sovellusasiantuntija Mylab Oy",
+						"subTopicText": "Sovellusasiantuntijan tehtävät laboratoriotietojärjestelmän kehityksessä.",
+						"subTopicInfo": [
+							"Jira ja Confluence",
+							"C#, HTML, CSS",
+							".NET Framework",
+							"Scrum ja SAFe"
+						]
+					},
+					{
+						"subTopicHeader": "2015-2018 Obduktioalantyöt",
+						"subTopicText": "Obduktioalan työt lääketieteellisissä ja oikeuslääketieteellisissä obduktioissa.",
+						"subTopicInfo": [
+							"Röntgenkuvaus ja DVI -toiminta",
+							"Vainajalogistiikka ja lähetteet"
+						]
+					},
+					{
+						"subTopicHeader": "2005-2015 Ensihoitoalan työt",
+						"subTopicText": "Ensihoitoalan työt hoito- ja perustason yksiköissä.",
+						"subTopicInfo": [
+							"HUS: Helsinki, Vanhaa, Hyvinkää ja Tuusula",
+							"Kanta-Häme: Hausjärvi"
 						]
 					}
 				]
 			},
-
 			{
-				"topic": "Työkokemus",
-				"subTopics": [ 
-					{"subTopicHeader":"Työkokemus 1 2000-2000",
+				"topic": "Harrastukset",
+				"subTopics": [
+					{
+						"subTopicHeader": "",
+						"subTopicText": "",
 						"subTopicInfo": [
-							"Nimike loremipsum",
-							"Tärkemimmät tehtävät da daa da da ada daa"
-						]
-					},
-					{"subTopicHeader":"Työkokemus 2 2000-2000",
-						"subTopicInfo": [
-							"Nimike loremipsum",
-							"Tärkemimmät tehtävät da daa da da ada daa"
+							"As Oy Helsingin Uusi Pajamäki - hallituksen jäsen",
+							"Vääpelikilta ry - useita eri luottamustehtäviä johtokunnassa",
+							"Labradori Callan kanssa harrastaminen",
+							"Lentosimulaattorit",
+							"Golf - autona ja pelinä 🤓"
 						]
 					}
 				]
 			}
-		]
+		],
+		"footer": {
+			"author": "Heikki Juhani Kumpare",
+			"email": "<a href = \"mailto:heikki.kumpare@centria.fi\">heikki.kumpare@centria.fi</a>"
+		}
 	}
 }

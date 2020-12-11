@@ -2,9 +2,16 @@
 <html>
 
 <head>
-	<title>Carsale AJAX example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<LINK rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="icon" type="image/png" href="./heikki.jpg">
+
+	<title>Heikki Juhani Kumpare (os. Pietilä)</title>
+
 	<script>
-		function getCars() {
+		function getCv() {
 
 			var ajaxRequest = new XMLHttpRequest();
 			ajaxRequest.onreadystatechange = function () {
@@ -18,28 +25,46 @@
 						var curriculumVitae = jsonObj.curriculumVitae;
 
 						document.getElementById("header").innerHTML = curriculumVitae.header;
-						document.getElementById("test").innerHTML = curriculumVitae.test;
-						document.getElementById("personalInfo").innerHTML = curriculumVitae.personalInfo;
-						//document.getElementById("header").style.color = "red";
+
+						var i, personalInfo = "";
+
+						for (i in curriculumVitae.personalInfo) {
+							personalInfo += "<li>" + curriculumVitae.personalInfo[i];
+						}
+						document.getElementById("personalInfo").innerHTML = personalInfo;
+
 
 						var i, j, k, content = "";
 
 						for (i in curriculumVitae.content) {
-							content += "<h3>" + curriculumVitae.content[i].topic + "</h3>";
+							content += "<fieldset>";
+
+							content += "<legend>" + curriculumVitae.content[i].topic + "</legend>";
+
 							for (j in curriculumVitae.content[i].subTopics) {
 								content += "<h4>" + curriculumVitae.content[i].subTopics[j].subTopicHeader + "</h4>";
+
+								content += "<div style=\"margin-left: 30px; margin-right: 80px;\">";
 								for (k in curriculumVitae.content[i].subTopics[j].subTopicText) {
 									content += curriculumVitae.content[i].subTopics[j].subTopicText[k];
-								
+
 								}
+								content += "</div>";
+								content += "<br>";
+
+
 								for (k in curriculumVitae.content[i].subTopics[j].subTopicInfo) {
-									content += "<li>" + curriculumVitae.content[i].subTopics[j].subTopicInfo[k];
+									content += "<li style=\"margin-left: 30px;\">" + curriculumVitae.content[i].subTopics[j].subTopicInfo[k] + "</li>";
+
 								}
-								"<br>"
 							}
+
+							content += "</fieldset>" + "<br>";
 						}
 
 						document.getElementById("content").innerHTML = content;
+						document.getElementById("author").innerHTML = curriculumVitae.footer.author;
+						document.getElementById("email").innerHTML = curriculumVitae.footer.email;
 
 					}
 					else {
@@ -61,11 +86,40 @@
 
 </head>
 
-<body onload="getCars()">
-	<div id="header"></div>
-	<div id="test"></div>
-	<div id="personalInfo"></div>
-	<div id="content"></div>
+<body onload="getCv()">
+
+	<header>
+
+		<h1>
+			<div id="header"></div>
+		</h1>
+
+	</header>
+
+	<section>
+
+		<nav>
+			<img src="heikki.jpg" alt="Heikki" style="width: 70%; margin: 10%;">
+			<div id="personalInfo"></div>
+		</nav>
+
+		<article>
+
+			<div id="header"></div>
+			<div id="personalInfo"></div>
+			<div id="content"></div>
+
+		</article>
+
+	</section>
+
+
+	<footer>
+
+		<div id="author"></div>
+		<div id="email"></div>
+	</footer>
+
 </body>
 
 </html>
