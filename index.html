@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="paikannus, paikkatieto" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<LINK rel="stylesheet" type="text/css" href="style.css">
 
 	<link rel="icon" type="image/png" href="./heikki.jpg">
 
 	<title>Heikki Juhani Kumpare (os. Pietilä)</title>
-	
+
 	<script>
 		function getCv() {
 
@@ -30,27 +30,41 @@
 
 						for (i in curriculumVitae.personalInfo) {
 							personalInfo += "<li>" + curriculumVitae.personalInfo[i];
-						}					
+						}
 						document.getElementById("personalInfo").innerHTML = personalInfo;
-						//document.getElementById("header").style.color = "red";
+
 
 						var i, j, k, content = "";
 
 						for (i in curriculumVitae.content) {
-							content += "<h3>" + curriculumVitae.content[i].topic + "</h3>";
+							content += "<fieldset>";
+
+							content += "<legend>" + curriculumVitae.content[i].topic + "</legend>";
+
 							for (j in curriculumVitae.content[i].subTopics) {
 								content += "<h4>" + curriculumVitae.content[i].subTopics[j].subTopicHeader + "</h4>";
+
+								content += "<div style=\"margin-left: 30px; margin-right: 80px;\">";
 								for (k in curriculumVitae.content[i].subTopics[j].subTopicText) {
 									content += curriculumVitae.content[i].subTopics[j].subTopicText[k];
+
 								}
+								content += "</div>";
+								content += "<br>";
+
+
 								for (k in curriculumVitae.content[i].subTopics[j].subTopicInfo) {
-									content += "<li>" + curriculumVitae.content[i].subTopics[j].subTopicInfo[k];
+									content += "<li style=\"margin-left: 30px;\">" + curriculumVitae.content[i].subTopics[j].subTopicInfo[k] + "</li>";
+
 								}
-								"<br>"
 							}
+
+							content += "</fieldset>" + "<br>";
 						}
 
 						document.getElementById("content").innerHTML = content;
+						document.getElementById("author").innerHTML = curriculumVitae.footer.author;
+						document.getElementById("email").innerHTML = curriculumVitae.footer.email;
 
 					}
 					else {
@@ -74,81 +88,36 @@
 
 <body onload="getCv()">
 
-    <header>
+	<header>
 
-        <h1><div id="header"></div></h1>
-        
+		<h1>
+			<div id="header"></div>
+		</h1>
+
 	</header>
 
 	<section>
 
-        <nav>
-            <img src="heikki.jpg" alt="Heikki" style="width: 70%; margin: 10%;">
-            <div id="personalInfo"></div>
+		<nav>
+			<img src="heikki.jpg" alt="Heikki" style="width: 70%; margin: 10%;">
+			<div id="personalInfo"></div>
 		</nav>
 
-
 		<article>
-			<a name="koulutus"></a>
-			<fieldset>
 
-				<legend>Koulutus / Education</legend>
-                <div id="header"></div>
-                <div id="personalInfo"></div>
-                <div id="content"></div>
-		
+			<div id="header"></div>
+			<div id="personalInfo"></div>
+			<div id="content"></div>
 
-			</fieldset>
-
-			<br>
-			<a name="tyokokemus"></a>
-			<fieldset>
-
-				<legend>Työkokemus</legend>
-
-				<h4>2019- Sovellusasiantuntija Mylab Oy</h4>
-
-
-				<p style="margin-left: 50px;">Sovellusasiantuntijan tehtävät laboratoriotietojärjestelmän
-					kehityksessä</p>
-				<ul style="margin-left: 30px;">
-					<li>Jira ja Confluence</li>
-					<li>C#, HTML, CSS</li>
-					<li>.NET Framework</li>
-					<li>Scrum ja SAFe</li>
-				</ul>
-
-
-			</fieldset>
-			<br>
-
-			<a name="muu"></a>
-			<fieldset>
-
-				<legend>Harrastukset ja luottamustoimet</legend>
-
-
-				<p style="margin-left: 50px;"></p>
-				<ul style="margin-left: 30px;">
-					<li>As Oy Helsingin Uusi Pajamäki - hallituksen jäsen</li>
-					<li>Vääpelikilta ry - useita eri luottamustehtäviä johtokunnassa</li>
-					<li><a href="https://www.instagram.com/labradori.calla/" target="_blank">Labradori Callan</a> kanssa
-						harrastaminen</li>
-					<li>Lentosimulaattorit</li>
-					<li>Golf - autona ja pelinä <b>🤓</b></li>
-
-				</ul>
-
-
-			</fieldset><br>
 		</article>
 
 	</section>
 
 
 	<footer>
-		<p>Heikki Kumpare<br>
-			<a href="mailto:heikki.kumpare@centria.fi">heikki.kumpare@centria.fi</a></p>
+
+		<div id="author"></div>
+		<div id="email"></div>
 	</footer>
 
 </body>
